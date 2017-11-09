@@ -1,0 +1,10 @@
+---
+- name: Generate MOTD
+  get_url:
+    url: "http://artii.herokuapp.com/make?text={{ ansible_hostname }}&font=c_ascii_"
+    dest: /etc/motd
+    force: yes
+- name: Insert newline at beginning of /etc/motd
+  command: sed -i '1s/^/\n/' /etc/motd
+- name: Insert newlines at end of /etc/motd
+  command: sed -i '$s/$/\n\n/' /etc/motd
