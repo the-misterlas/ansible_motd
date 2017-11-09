@@ -1,2 +1,3 @@
 ---
 # defaults file for motd_make_pretty
+font: "c_ascii_"

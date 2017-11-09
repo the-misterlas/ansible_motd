@@ -1,7 +1,7 @@
 ---
 - name: Generate MOTD
   get_url:
-    url: "http://artii.herokuapp.com/make?text={{ ansible_hostname }}&font=c_ascii_"
+    url: "http://artii.herokuapp.com/make?text={{ ansible_hostname }}&font={{ font}}"
     dest: /etc/motd
     force: yes
 - name: Insert newline at beginning of /etc/motd
